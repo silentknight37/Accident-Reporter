@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">638813226990</string>
+    <string name="google_api_key" translatable="false">AIzaSyDZwLutAr1nOhCxLeBqb01wbkrQGb3Z62A</string>
+    <string name="google_app_id" translatable="false">1:638813226990:android:8c11da40a190d0d57330ff</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDZwLutAr1nOhCxLeBqb01wbkrQGb3Z62A</string>
+    <string name="google_storage_bucket" translatable="false">accident-reporter-3b3e2.appspot.com</string>
+    <string name="project_id" translatable="false">accident-reporter-3b3e2</string>
+</resources>

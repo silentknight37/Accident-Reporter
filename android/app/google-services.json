@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638813226990",
+    "project_id": "accident-reporter-3b3e2",
+    "storage_bucket": "accident-reporter-3b3e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638813226990:android:8c11da40a190d0d57330ff",
+        "android_client_info": {
+          "package_name": "com.lk.insurance.resporter.insurance_reporter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZwLutAr1nOhCxLeBqb01wbkrQGb3Z62A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
