@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:insurance_reporter/components/report_list_item.dart';
 import 'package:insurance_reporter/models/accident_record.dart';
-import 'package:insurance_reporter/pages/report_details_page.dart';
 
 class ReportListTab extends StatefulWidget {
   const ReportListTab({Key? key}) : super(key: key);
@@ -50,32 +50,7 @@ class _ReportListTabState extends State<ReportListTab> {
         return ListView.builder(
           itemCount: reports.length,
           itemBuilder: (context, index) {
-            final report = reports[index];
-            return ListTile(
-              title: Text(
-                  "${report.location} with ${report.passengerCount} passengers"),
-              subtitle: Text(
-                  "On ${report.timestamp.toString()} by driver ${report.driverName}"),
-              trailing: Text(
-                report.status!,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: report.status == 'Pending'
-                      ? Colors.orange
-                      : report.status == 'Approved'
-                          ? Colors.green
-                          : Colors.red,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ReportDetailsPage(report: report),
-                  ),
-                );
-              },
-            );
+            return ReportListItem(report: reports[index]);
           },
         );
       },

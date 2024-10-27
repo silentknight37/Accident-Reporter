@@ -99,8 +99,11 @@ class _AuthPageState extends State<AuthPage> {
 
     if (email.isNotEmpty && password.isNotEmpty) {
       try {
-        final credential = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email, password: password);
+        final credential =
+            await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
 
         if (credential.user != null) {
           Navigator.pushReplacement(
@@ -117,21 +120,25 @@ class _AuthPageState extends State<AuthPage> {
           );
         }
       } on FirebaseAuthException catch (e) {
-        if (e.code == 'weak-password') {
+        if (e.code == 'user-not-found') {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('The password provided is too weak.'),
+              content: Text('No user found for that email.'),
             ),
           );
-        } else if (e.code == 'email-already-in-use') {
+        } else if (e.code == 'wrong-password') {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('The account already exists for that email.'),
+              content: Text('Wrong password provided for that user.'),
             ),
           );
         }
       } catch (e) {
-        print(e);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('An error occurred. Please try again later.'),
+          ),
+        );
       }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
