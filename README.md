@@ -1,4 +1,4 @@
-# insurance_reporter
+# Accident-Reporter
 
 App to report insurence companies about your accident
 
